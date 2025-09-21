@@ -1,0 +1,42 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MetaAdder Task Pane Add-in</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <script type="text/javascript" src="./WordCustomPropertyController.js"></script>
+    <script type="text/javascript" src="./ExcelCustomPropertyController.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="./CustomPropertyController.js"></script>
+    <script type="text/javascript" src="./customClassification.js"></script>
+    <script type="text/javascript" src="./WordCustomXMLController.js"></script>
+
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.1.0/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <section id="display-classification-panel" class="ms-welcome__main">
+    </section>
+    <section id="classification-disabled-panel" class="ms-welcome__main" style="display: none;">
+        <div class="ms-font-xl ms-settings__content__subtitle">Classification Is Disabled</div>
+    </section>
+    <main id="compose-panel" class="ms-welcome__main" style="display: flex;">
+        <div class="ms-font-xl ms-settings__content__subtitle">Assign Classification Label</div>
+        <div id="classificationGroup" class="ms-ChoiceFieldGroup"></div>
+    </main>
+</body>
+
+</html>

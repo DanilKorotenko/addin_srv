@@ -1,0 +1,112 @@
+class CustomClassification
+{
+    static readByNameFromCustomProperties(aName, aCustomProperties)
+    {
+        const mainProp = aCustomProperties.items.find(item => item.key === aName);
+        const classifiedBy = aCustomProperties.items.find(item => item.key === "ClassifiedBy");
+        const classificationHost = aCustomProperties.items.find(item => item.key === "ClassificationHost");
+        const classificationDate = aCustomProperties.items.find(item => item.key === "ClassificationDate");
+        const classificationGUID = aCustomProperties.items.find(item => item.key === "ClassificationGUID");
+
+        if (!mainProp || !classifiedBy || !classificationHost || !classificationDate || !classificationGUID)
+        {
+            return null;
+        }
+
+        return new CustomClassification
+        (
+            aName,
+            mainProp.value,
+            classifiedBy.value,
+            classificationHost.value,
+            classificationDate.value,
+            classificationGUID.value
+        );
+    }
+
+    static async readByNameFromCustomXmlParts(aName, aCustomXmlParts)
+    {
+        if (aCustomXmlParts.items.length === 0)
+        {
+            return null;
+        }
+
+        for (const part of aCustomXmlParts.items)
+        {
+            const xml = part.getXml();
+            await part.context.sync();
+
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xml.value, "application/xml");
+
+            const propName = xmlDoc.querySelector("customPropName")?.textContent;
+            if (propName === aName)
+            {
+                return {
+                    value: xmlDoc.querySelector("attrValue")?.textContent ?? "",
+                    name: propName,
+                    classificationDate: xmlDoc.querySelector("timestamp")?.textContent ?? "",
+                    classifiedBy: xmlDoc.querySelector("userName")?.textContent ?? "",
+                    classificationHost: xmlDoc.querySelector("computerName")?.textContent ?? "",
+                    classificationGUID: xmlDoc.querySelector("guid")?.textContent ?? "",
+                    id: part.id,
+                };
+            }
+        }
+
+        return null;
+    }
+
+    addClassificationInfo(customProperties)
+    {
+        customProperties.add(this.name, this.value);
+        customProperties.add("ClassifiedBy", this.classifiedBy);
+        customProperties.add("ClassificationHost", this.classificationHost);
+        customProperties.add("ClassificationDate", this.classificationDate);
+        customProperties.add("ClassificationGUID", this.classificationGUID);
+    }
+
+    toXmlString()
+    {
+        return `
+            <GTBClassification>
+                <attrValue xml:space="preserve">${this.value}</attrValue>
+                <customPropName>${this.name}</customPropName>
+                <timestamp>${this.classificationDate}</timestamp>
+                <userName>${this.classifiedBy}</userName>
+                <computerName>${this.classificationHost}</computerName>
+                <guid>${this.classificationGUID}</guid>
+            </GTBClassification>`;
+    }
+
+    static deleteFromCustomProperties(aName, customProps)
+    {
+        const keysToRemove =
+        [
+            aName,
+            "ClassifiedBy",
+            "ClassificationHost",
+            "ClassificationDate",
+            "ClassificationGUID",
+        ];
+        for (const key of keysToRemove)
+        {
+            const prop = customProps.items.find(item => item.key === key);
+            if (prop)
+            {
+                prop.delete();
+            }
+        }
+    }
+
+    constructor(aName, aValue, aUserName, aHostName, aDate = new Date().toLocaleString(), aGUID)
+    {
+        this.name = aName;
+        this.value = aValue;
+        this.classifiedBy = aUserName;
+        this.classificationHost = aHostName;
+        this.classificationDate = aDate;
+        this.classificationGUID = aGUID;
+    }
+}
+module.exports = CustomClassification;

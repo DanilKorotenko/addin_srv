@@ -42,39 +42,7 @@ int main(int argc, char const *argv[])
         res.set_content(jsonStr, "application/json");
         res.set_header("Access-Control-Allow-Origin","https://localhost:3000");
     });
-    svr.Get("/index.html", [](const httplib::Request &, httplib::Response &res) {
-        std::string content = load_file("source/index.html");
-        res.set_content(content, "text/html");
-        //res.set_header("Access-Control-Allow-Origin","https://localhost:3000");
-    });
-    svr.Get("/index.js", [](const httplib::Request &, httplib::Response &res) {
-        std::string content = load_file("source/index.js");
-        res.set_content(content, "application/javascript");
-    });
-    svr.Get("/taskpane.css", [](const httplib::Request &, httplib::Response &res) {
-        std::string content = load_file("source/taskpane.css");
-        res.set_content(content, "text/css");
-    });
-    svr.Get("/CustomPropertyController.js", [](const httplib::Request &, httplib::Response &res) {
-        std::string content = load_file("source/CustomPropertyController.js");
-        res.set_content(content, "application/javascript");
-    });
-    svr.Get("/customClassification.js", [](const httplib::Request &, httplib::Response &res) {
-        std::string content = load_file("source/customClassification.js");
-        res.set_content(content, "application/javascript");
-    });
-    svr.Get("/WordCustomPropertyController.js", [](const httplib::Request &, httplib::Response &res) {
-        std::string content = load_file("source/WordCustomPropertyController.js");
-        res.set_content(content, "application/javascript");
-    });
-    svr.Get("/ExcelCustomPropertyController.js", [](const httplib::Request &, httplib::Response &res) {
-        std::string content = load_file("source/ExcelCustomPropertyController.js");
-        res.set_content(content, "application/javascript");
-    });
-    svr.Get("/WordCustomXMLController.js", [](const httplib::Request &, httplib::Response &res) {
-        std::string content = load_file("source/WordCustomXMLController.js");
-        res.set_content(content, "application/javascript");
-    });
+    svr.set_mount_point("/", "officeAddin/src");
 
     svr.set_logger([](const httplib::Request &req, const httplib::Response &res) {
         std::cout << req.method << " " << req.path << " -> " << res.status << std::endl;

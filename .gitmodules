@@ -1,0 +1,3 @@
+[submodule "officeAddin"]
+	path = officeAddin
+	url = https://github.com/Katameqqe/officeAddin

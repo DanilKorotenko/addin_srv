@@ -14,6 +14,50 @@ struct SendData {
     )
 };
 
+struct FontData {
+    std::string fontName;
+    std::string fontColor;
+    std::string fontSize;
+    std::string text;
+
+    PBNJSON_SERIALIZE( FontData,
+        (std::string, fontName)
+        (std::string, fontColor)
+        (std::string, fontSize)
+        (std::string, text)
+    )
+};
+
+struct WaterMarkData {
+    std::string fontName;
+    std::string fontColor;
+    std::string fontSize;
+    std::string rotation;
+    std::string transparency;
+    std::string text;
+
+    PBNJSON_SERIALIZE( WaterMarkData,
+        (std::string, fontName)
+        (std::string, fontColor)
+        (std::string, fontSize)
+        (std::string, rotation)
+        (std::string, transparency)
+        (std::string, text)
+    )
+};
+
+struct ClassifData {
+    std::vector<FontData> hdr;
+    std::vector<FontData> ftr;
+    WaterMarkData wm;
+
+    PBNJSON_SERIALIZE( ClassifData,
+        (std::vector<FontData>, hdr)
+        (std::vector<FontData>, ftr)
+        (WaterMarkData, wm)
+    )
+};
+
 std::string load_file(const std::string &path)
 {
     std::ifstream file(path, std::ios::binary);
@@ -24,7 +68,39 @@ std::string load_file(const std::string &path)
     return buffer.str();
 }
 
-int main(int argc, char const *argv[])
+ClassifData generateJSON()
+{
+    ClassifData resultJson;
+    FontData hdr;
+    FontData ftr;
+    WaterMarkData wm;
+    std::vector<FontData*> fontDatas;
+    fontDatas.push_back(&hdr);
+    fontDatas.push_back(&ftr);
+
+    for (FontData *pointer: fontDatas)
+    {
+        pointer->fontColor = "0000FF";
+        pointer->fontSize = "14";
+        pointer->fontName = "Arial";
+        pointer->text = "SECRET";
+    }
+    wm.fontColor = "0000FF";
+    wm.fontSize = "14";
+    wm.fontName = "Arial";
+    wm.rotation = "45";
+    wm.transparency = "5000";
+    wm.text = "SECRET";
+
+    resultJson.hdr.push_back(hdr);
+    resultJson.ftr.push_back(ftr);
+    resultJson.wm = wm;
+
+    return resultJson;
+}
+
+//int main(int argc, char const *argv[])
+int main()
 {
     SendData sendArray;
     sendArray.names = {
@@ -35,17 +111,29 @@ int main(int argc, char const *argv[])
         "Pers"
     };
 
+    ClassifData classifJSON = generateJSON();
+
+    std::string jsonFont;
+    pbnjson::pbnjson_serialize(classifJSON, jsonFont);
+
+    std::cout << jsonFont << std::endl;
+
     httplib::SSLServer svr("cert.pem", "key.pem");
     std::string jsonStr;
     pbnjson::pbnjson_serialize(sendArray, jsonStr);
     svr.Get("/list", [&](const httplib::Request &, httplib::Response &res) {
         res.set_content(jsonStr, "application/json");
-        res.set_header("Access-Control-Allow-Origin","https://localhost:3000");
+        res.set_header("Access-Control-Allow-Origin","https://192.168.128.4:443");
+    });
+    svr.Get("/classiflist", [&](const httplib::Request &, httplib::Response &res) {
+        res.set_content(jsonFont, "application/json");
+        res.set_header("Access-Control-Allow-Origin","https://192.168.128.4:443");
     });
     svr.set_mount_point("/", "officeAddin/src");
+    svr.set_mount_point("/assets", "officeAddin/assets");
 
     svr.set_logger([](const httplib::Request &req, const httplib::Response &res) {
-        std::cout << req.method << " " << req.path << " -> " << res.status << std::endl;
+        std::cout << "[" << req.remote_addr << "] " << req.method << " " << req.path << " -> " << res.status << std::endl;
     });
 
     std::cout << "Server Started!" << std::endl;

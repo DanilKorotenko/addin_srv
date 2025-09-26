@@ -3,3 +3,5 @@ bin/
 build/
 obj/
 .vscode/
+macosx/addin_srv.xcodeproj/project.xcworkspace/xcuserdata
+macosx/addin_srv.xcodeproj/xcuserdata

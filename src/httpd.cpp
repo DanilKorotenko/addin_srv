@@ -113,22 +113,32 @@ int main()
 
     ClassifData classifJSON = generateJSON();
 
+// TODO:
     std::string jsonFont;
     pbnjson::pbnjson_serialize(classifJSON, jsonFont);
+// Do you see this? The variable with name "jsonFont" contains object classifJSON
+// So what do we have? font or some classif?
 
     std::cout << jsonFont << std::endl;
 
     httplib::SSLServer svr("cert.pem", "key.pem");
     std::string jsonStr;
     pbnjson::pbnjson_serialize(sendArray, jsonStr);
+
+    // TODO: list of what?
     svr.Get("/list", [&](const httplib::Request &, httplib::Response &res) {
         res.set_content(jsonStr, "application/json");
         res.set_header("Access-Control-Allow-Origin","https://192.168.128.4:443");
     });
+
+    // TODO: No shortcuts.
+    // What is /list and what is /classiflist ?
     svr.Get("/classiflist", [&](const httplib::Request &, httplib::Response &res) {
         res.set_content(jsonFont, "application/json");
         res.set_header("Access-Control-Allow-Origin","https://192.168.128.4:443");
     });
+
+    // TODO: move assets folder into src folder
     svr.set_mount_point("/", "officeAddin/src");
     svr.set_mount_point("/assets", "officeAddin/assets");
 

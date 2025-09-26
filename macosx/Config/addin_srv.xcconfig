@@ -1,0 +1,27 @@
+//
+//  Config.xcconfig
+//  addin_srv
+//
+//  Created by Danil Korotenko on 9/25/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+OTHER_LDFLAGS = -lcrypto.3 -lssl.3 -headerpad_max_install_names
+
+LIBRARY_SEARCH_PATHS = $(inherited) $(SRCROOT)/../libs/openssl-3-macosx/lib $(SRCROOT)/../libs/boost_1_70_0/stage/lib
+
+USER_HEADER_SEARCH_PATHS = $(SRCROOT)/../src $(SRCROOT)/../../libs/boost_1_70_0
+
+HEADER_SEARCH_PATHS = $(SRCROOT)/../libs/openssl-3-macosx/include $(SRCROOT)/../libs/boost_1_70_0
+
+CLANG_CXX_LANGUAGE_STANDARD = gnu++0x
+
+
+//OTHER_LDFLAGS = -lboost_filesystem -lboost_regex -lcrypto.3 -lssl.3 -headerpad_max_install_names
+//
+//LIBRARY_SEARCH_PATHS = $(inherited) $(SRCROOT)/../../libs/boost_1_70_0/stage/lib $(SRCROOT)/../../libs/openssl-3-macosx/lib
+//
+//USER_HEADER_SEARCH_PATHS = $(SRCROOT)/../../ $(SRCROOT)/../../common $(SRCROOT)/../../agent $(SRCROOT)/../../agent/common $(SRCROOT)/../../libs/cpp-httplib $(SRCROOT)/../../libs/boost_1_70_0 $(SRCROOT)/../../libs/libcmime/src
+//

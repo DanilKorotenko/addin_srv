@@ -10,6 +10,23 @@
 		DA5F7A762E85A14600733469 /* httpd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA5F7A732E85A13800733469 /* httpd.cpp */; };
 		DA5F7A792E85A60B00733469 /* libcrypto.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA5F7A602E85A13800733469 /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DA5F7A7A2E85A60F00733469 /* libssl.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA5F7A632E85A13800733469 /* libssl.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DA5F7A832E85AF4D00733469 /* key.pem in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA5F7A822E85AF2700733469 /* key.pem */; };
+		DA5F7A842E85AF4D00733469 /* cert.pem in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA5F7A812E85AEA500733469 /* cert.pem */; };
+		DA5F7AB32E85B17C00733469 /* customClassification.js in Copy addin folder */ = {isa = PBXBuildFile; fileRef = DA5F7A932E85B16300733469 /* customClassification.js */; };
+		DA5F7AB42E85B17D00733469 /* CustomPropertyController.js in Copy addin folder */ = {isa = PBXBuildFile; fileRef = DA5F7A942E85B16300733469 /* CustomPropertyController.js */; };
+		DA5F7AB52E85B17F00733469 /* CustomXMLController.js in Copy addin folder */ = {isa = PBXBuildFile; fileRef = DA5F7A952E85B16300733469 /* CustomXMLController.js */; };
+		DA5F7AB62E85B18300733469 /* ExcelCustomPropertyController.js in Copy addin folder */ = {isa = PBXBuildFile; fileRef = DA5F7A962E85B16300733469 /* ExcelCustomPropertyController.js */; };
+		DA5F7AB72E85B19500733469 /* index.html in Copy addin folder */ = {isa = PBXBuildFile; fileRef = DA5F7A972E85B16300733469 /* index.html */; };
+		DA5F7AB82E85B19500733469 /* index.js in Copy addin folder */ = {isa = PBXBuildFile; fileRef = DA5F7A982E85B16300733469 /* index.js */; };
+		DA5F7AB92E85B19500733469 /* taskpane.css in Copy addin folder */ = {isa = PBXBuildFile; fileRef = DA5F7A992E85B16300733469 /* taskpane.css */; };
+		DA5F7ABA2E85B19500733469 /* WordCustomPropertyController.js in Copy addin folder */ = {isa = PBXBuildFile; fileRef = DA5F7A9A2E85B16300733469 /* WordCustomPropertyController.js */; };
+		DA5F7ABB2E85B19500733469 /* WordCustomXMLController.js in Copy addin folder */ = {isa = PBXBuildFile; fileRef = DA5F7A9B2E85B16300733469 /* WordCustomXMLController.js */; };
+		DA5F7ABD2E85B1CF00733469 /* icon-16.png in Copy assets folder */ = {isa = PBXBuildFile; fileRef = DA5F7A862E85B16300733469 /* icon-16.png */; };
+		DA5F7ABE2E85B1CF00733469 /* icon-32.png in Copy assets folder */ = {isa = PBXBuildFile; fileRef = DA5F7A872E85B16300733469 /* icon-32.png */; };
+		DA5F7ABF2E85B1CF00733469 /* icon-64.png in Copy assets folder */ = {isa = PBXBuildFile; fileRef = DA5F7A882E85B16300733469 /* icon-64.png */; };
+		DA5F7AC02E85B1CF00733469 /* icon-80.png in Copy assets folder */ = {isa = PBXBuildFile; fileRef = DA5F7A892E85B16300733469 /* icon-80.png */; };
+		DA5F7AC12E85B1CF00733469 /* icon-128.png in Copy assets folder */ = {isa = PBXBuildFile; fileRef = DA5F7A8A2E85B16300733469 /* icon-128.png */; };
+		DA5F7AC22E85B1CF00733469 /* logo-filled.png in Copy assets folder */ = {isa = PBXBuildFile; fileRef = DA5F7A8B2E85B16300733469 /* logo-filled.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,9 +36,46 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				DA5F7A832E85AF4D00733469 /* key.pem in CopyFiles */,
+				DA5F7A842E85AF4D00733469 /* cert.pem in CopyFiles */,
 				DA5F7A7A2E85A60F00733469 /* libssl.3.dylib in CopyFiles */,
 				DA5F7A792E85A60B00733469 /* libcrypto.3.dylib in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5F7A852E85B0DE00733469 /* Copy addin folder */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = officeAddin/src;
+			dstSubfolderSpec = 16;
+			files = (
+				DA5F7AB72E85B19500733469 /* index.html in Copy addin folder */,
+				DA5F7AB82E85B19500733469 /* index.js in Copy addin folder */,
+				DA5F7AB92E85B19500733469 /* taskpane.css in Copy addin folder */,
+				DA5F7ABA2E85B19500733469 /* WordCustomPropertyController.js in Copy addin folder */,
+				DA5F7ABB2E85B19500733469 /* WordCustomXMLController.js in Copy addin folder */,
+				DA5F7AB32E85B17C00733469 /* customClassification.js in Copy addin folder */,
+				DA5F7AB42E85B17D00733469 /* CustomPropertyController.js in Copy addin folder */,
+				DA5F7AB52E85B17F00733469 /* CustomXMLController.js in Copy addin folder */,
+				DA5F7AB62E85B18300733469 /* ExcelCustomPropertyController.js in Copy addin folder */,
+			);
+			name = "Copy addin folder";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5F7ABC2E85B1AA00733469 /* Copy assets folder */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = officeAddin/assets;
+			dstSubfolderSpec = 16;
+			files = (
+				DA5F7ABD2E85B1CF00733469 /* icon-16.png in Copy assets folder */,
+				DA5F7ABE2E85B1CF00733469 /* icon-32.png in Copy assets folder */,
+				DA5F7ABF2E85B1CF00733469 /* icon-64.png in Copy assets folder */,
+				DA5F7AC02E85B1CF00733469 /* icon-80.png in Copy assets folder */,
+				DA5F7AC12E85B1CF00733469 /* icon-128.png in Copy assets folder */,
+				DA5F7AC22E85B1CF00733469 /* logo-filled.png in Copy assets folder */,
+			);
+			name = "Copy assets folder";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -268,6 +322,47 @@
 		DA5F7A732E85A13800733469 /* httpd.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = httpd.cpp; sourceTree = "<group>"; };
 		DA5F7A742E85A13800733469 /* httplib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = httplib.h; sourceTree = "<group>"; };
 		DA5F7A782E85A1DA00733469 /* addin_srv.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = addin_srv.xcconfig; sourceTree = "<group>"; };
+		DA5F7A812E85AEA500733469 /* cert.pem */ = {isa = PBXFileReference; lastKnownFileType = text; name = cert.pem; path = ../cert.pem; sourceTree = SOURCE_ROOT; };
+		DA5F7A822E85AF2700733469 /* key.pem */ = {isa = PBXFileReference; lastKnownFileType = text; name = key.pem; path = ../key.pem; sourceTree = SOURCE_ROOT; };
+		DA5F7A862E85B16300733469 /* icon-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-16.png"; sourceTree = "<group>"; };
+		DA5F7A872E85B16300733469 /* icon-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-32.png"; sourceTree = "<group>"; };
+		DA5F7A882E85B16300733469 /* icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-64.png"; sourceTree = "<group>"; };
+		DA5F7A892E85B16300733469 /* icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-80.png"; sourceTree = "<group>"; };
+		DA5F7A8A2E85B16300733469 /* icon-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-128.png"; sourceTree = "<group>"; };
+		DA5F7A8B2E85B16300733469 /* logo-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-filled.png"; sourceTree = "<group>"; };
+		DA5F7A8D2E85B16300733469 /* commandsToGenerateCert.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = commandsToGenerateCert.txt; sourceTree = "<group>"; };
+		DA5F7A8E2E85B16300733469 /* eslint.config.mjs */ = {isa = PBXFileReference; lastKnownFileType = text; path = eslint.config.mjs; sourceTree = "<group>"; };
+		DA5F7A8F2E85B16300733469 /* jest.config.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jest.config.js; sourceTree = "<group>"; };
+		DA5F7A902E85B16300733469 /* manifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = manifest.xml; sourceTree = "<group>"; };
+		DA5F7A912E85B16300733469 /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		DA5F7A922E85B16300733469 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		DA5F7A932E85B16300733469 /* customClassification.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = customClassification.js; sourceTree = "<group>"; };
+		DA5F7A942E85B16300733469 /* CustomPropertyController.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = CustomPropertyController.js; sourceTree = "<group>"; };
+		DA5F7A952E85B16300733469 /* CustomXMLController.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = CustomXMLController.js; sourceTree = "<group>"; };
+		DA5F7A962E85B16300733469 /* ExcelCustomPropertyController.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ExcelCustomPropertyController.js; sourceTree = "<group>"; };
+		DA5F7A972E85B16300733469 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		DA5F7A982E85B16300733469 /* index.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		DA5F7A992E85B16300733469 /* taskpane.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = taskpane.css; sourceTree = "<group>"; };
+		DA5F7A9A2E85B16300733469 /* WordCustomPropertyController.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = WordCustomPropertyController.js; sourceTree = "<group>"; };
+		DA5F7A9B2E85B16300733469 /* WordCustomXMLController.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = WordCustomXMLController.js; sourceTree = "<group>"; };
+		DA5F7A9D2E85B16300733469 /* excel.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = excel.js; sourceTree = "<group>"; };
+		DA5F7A9E2E85B16300733469 /* excelContext.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = excelContext.js; sourceTree = "<group>"; };
+		DA5F7A9F2E85B16300733469 /* excelWorkbook.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = excelWorkbook.js; sourceTree = "<group>"; };
+		DA5F7AA12E85B16300733469 /* word.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = word.js; sourceTree = "<group>"; };
+		DA5F7AA22E85B16300733469 /* wordContext.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = wordContext.js; sourceTree = "<group>"; };
+		DA5F7AA32E85B16300733469 /* wordDocument.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = wordDocument.js; sourceTree = "<group>"; };
+		DA5F7AA52E85B16300733469 /* customProperties.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = customProperties.js; sourceTree = "<group>"; };
+		DA5F7AA62E85B16300733469 /* customProperty.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = customProperty.js; sourceTree = "<group>"; };
+		DA5F7AA72E85B16300733469 /* customXmlPart.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = customXmlPart.js; sourceTree = "<group>"; };
+		DA5F7AA82E85B16300733469 /* customXmlParts.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = customXmlParts.js; sourceTree = "<group>"; };
+		DA5F7AA92E85B16300733469 /* document.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = document.js; sourceTree = "<group>"; };
+		DA5F7AAA2E85B16300733469 /* fetch.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = fetch.js; sourceTree = "<group>"; };
+		DA5F7AAB2E85B16300733469 /* office.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = office.js; sourceTree = "<group>"; };
+		DA5F7AAC2E85B16300733469 /* properties.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = properties.js; sourceTree = "<group>"; };
+		DA5F7AAD2E85B16300733469 /* window.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = window.js; sourceTree = "<group>"; };
+		DA5F7AAF2E85B16300733469 /* excel.test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = excel.test.js; sourceTree = "<group>"; };
+		DA5F7AB02E85B16300733469 /* powerPoint.test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = powerPoint.test.js; sourceTree = "<group>"; };
+		DA5F7AB12E85B16300733469 /* word.test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = word.test.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,13 +382,15 @@
 				DA5F7A772E85A1A800733469 /* Config */,
 				DA5F796E2E85A13800733469 /* httpd.py */,
 				DA5F79712E85A13800733469 /* json */,
+				DA5F7A822E85AF2700733469 /* key.pem */,
 				DA5F7A662E85A13800733469 /* libs */,
 				DA5F7A672E85A13800733469 /* makefile */,
 				DA5F7A682E85A13800733469 /* officeAddin */,
+				DA5F78492E8596AC00733469 /* Products */,
 				DA5F7A692E85A13800733469 /* readme.md */,
+				DA5F7A812E85AEA500733469 /* cert.pem */,
 				DA5F7A722E85A13800733469 /* source */,
 				DA5F7A752E85A13800733469 /* src */,
-				DA5F78492E8596AC00733469 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -710,6 +807,15 @@
 		DA5F7A682E85A13800733469 /* officeAddin */ = {
 			isa = PBXGroup;
 			children = (
+				DA5F7A8C2E85B16300733469 /* assets */,
+				DA5F7A8D2E85B16300733469 /* commandsToGenerateCert.txt */,
+				DA5F7A8E2E85B16300733469 /* eslint.config.mjs */,
+				DA5F7A8F2E85B16300733469 /* jest.config.js */,
+				DA5F7A902E85B16300733469 /* manifest.xml */,
+				DA5F7A912E85B16300733469 /* package.json */,
+				DA5F7A922E85B16300733469 /* readme.md */,
+				DA5F7A9C2E85B16300733469 /* src */,
+				DA5F7AB22E85B16300733469 /* tests */,
 			);
 			name = officeAddin;
 			path = ../officeAddin;
@@ -749,6 +855,84 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		DA5F7A8C2E85B16300733469 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				DA5F7A862E85B16300733469 /* icon-16.png */,
+				DA5F7A872E85B16300733469 /* icon-32.png */,
+				DA5F7A882E85B16300733469 /* icon-64.png */,
+				DA5F7A892E85B16300733469 /* icon-80.png */,
+				DA5F7A8A2E85B16300733469 /* icon-128.png */,
+				DA5F7A8B2E85B16300733469 /* logo-filled.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		DA5F7A9C2E85B16300733469 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DA5F7A932E85B16300733469 /* customClassification.js */,
+				DA5F7A942E85B16300733469 /* CustomPropertyController.js */,
+				DA5F7A952E85B16300733469 /* CustomXMLController.js */,
+				DA5F7A962E85B16300733469 /* ExcelCustomPropertyController.js */,
+				DA5F7A972E85B16300733469 /* index.html */,
+				DA5F7A982E85B16300733469 /* index.js */,
+				DA5F7A992E85B16300733469 /* taskpane.css */,
+				DA5F7A9A2E85B16300733469 /* WordCustomPropertyController.js */,
+				DA5F7A9B2E85B16300733469 /* WordCustomXMLController.js */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		DA5F7AA02E85B16300733469 /* excel */ = {
+			isa = PBXGroup;
+			children = (
+				DA5F7A9D2E85B16300733469 /* excel.js */,
+				DA5F7A9E2E85B16300733469 /* excelContext.js */,
+				DA5F7A9F2E85B16300733469 /* excelWorkbook.js */,
+			);
+			path = excel;
+			sourceTree = "<group>";
+		};
+		DA5F7AA42E85B16300733469 /* word */ = {
+			isa = PBXGroup;
+			children = (
+				DA5F7AA12E85B16300733469 /* word.js */,
+				DA5F7AA22E85B16300733469 /* wordContext.js */,
+				DA5F7AA32E85B16300733469 /* wordDocument.js */,
+			);
+			path = word;
+			sourceTree = "<group>";
+		};
+		DA5F7AAE2E85B16300733469 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DA5F7AA02E85B16300733469 /* excel */,
+				DA5F7AA42E85B16300733469 /* word */,
+				DA5F7AA52E85B16300733469 /* customProperties.js */,
+				DA5F7AA62E85B16300733469 /* customProperty.js */,
+				DA5F7AA72E85B16300733469 /* customXmlPart.js */,
+				DA5F7AA82E85B16300733469 /* customXmlParts.js */,
+				DA5F7AA92E85B16300733469 /* document.js */,
+				DA5F7AAA2E85B16300733469 /* fetch.js */,
+				DA5F7AAB2E85B16300733469 /* office.js */,
+				DA5F7AAC2E85B16300733469 /* properties.js */,
+				DA5F7AAD2E85B16300733469 /* window.js */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		DA5F7AB22E85B16300733469 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				DA5F7AAE2E85B16300733469 /* helpers */,
+				DA5F7AAF2E85B16300733469 /* excel.test.js */,
+				DA5F7AB02E85B16300733469 /* powerPoint.test.js */,
+				DA5F7AB12E85B16300733469 /* word.test.js */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -759,6 +943,8 @@
 				DA5F78442E8596AC00733469 /* Sources */,
 				DA5F78452E8596AC00733469 /* Frameworks */,
 				DA5F78462E8596AC00733469 /* CopyFiles */,
+				DA5F7A852E85B0DE00733469 /* Copy addin folder */,
+				DA5F7ABC2E85B1AA00733469 /* Copy assets folder */,
 			);
 			buildRules = (
 			);

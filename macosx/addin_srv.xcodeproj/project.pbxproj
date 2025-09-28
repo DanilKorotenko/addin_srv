@@ -1123,6 +1123,10 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = QBPW9LPK8E;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danilkorotenko.addin-srv";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1134,6 +1138,10 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = QBPW9LPK8E;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danilkorotenko.addin-srv";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

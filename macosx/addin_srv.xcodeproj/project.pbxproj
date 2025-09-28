@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA5F7A762E85A14600733469 /* httpd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA5F7A732E85A13800733469 /* httpd.cpp */; };
 		DA5F7A792E85A60B00733469 /* libcrypto.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA5F7A602E85A13800733469 /* libcrypto.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DA5F7A7A2E85A60F00733469 /* libssl.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA5F7A632E85A13800733469 /* libssl.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DA5F7A832E85AF4D00733469 /* key.pem in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA5F7A822E85AF2700733469 /* key.pem */; };
@@ -27,6 +26,8 @@
 		DA5F7AC02E85B1CF00733469 /* icon-80.png in Copy assets folder */ = {isa = PBXBuildFile; fileRef = DA5F7A892E85B16300733469 /* icon-80.png */; };
 		DA5F7AC12E85B1CF00733469 /* icon-128.png in Copy assets folder */ = {isa = PBXBuildFile; fileRef = DA5F7A8A2E85B16300733469 /* icon-128.png */; };
 		DA5F7AC22E85B1CF00733469 /* logo-filled.png in Copy assets folder */ = {isa = PBXBuildFile; fileRef = DA5F7A8B2E85B16300733469 /* logo-filled.png */; };
+		DAE8C7D92E896795002861D0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAE8C7D82E896795002861D0 /* main.cpp */; };
+		DAE8C7DE2E896ADC002861D0 /* JSONmanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAE8C7DB2E896ADC002861D0 /* JSONmanager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -319,7 +320,6 @@
 		DA5F7A6F2E85A13800733469 /* taskpane.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = taskpane.css; sourceTree = "<group>"; };
 		DA5F7A702E85A13800733469 /* WordCustomPropertyController.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = WordCustomPropertyController.js; sourceTree = "<group>"; };
 		DA5F7A712E85A13800733469 /* WordCustomXMLController.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = WordCustomXMLController.js; sourceTree = "<group>"; };
-		DA5F7A732E85A13800733469 /* httpd.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = httpd.cpp; sourceTree = "<group>"; };
 		DA5F7A742E85A13800733469 /* httplib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = httplib.h; sourceTree = "<group>"; };
 		DA5F7A782E85A1DA00733469 /* addin_srv.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = addin_srv.xcconfig; sourceTree = "<group>"; };
 		DA5F7A812E85AEA500733469 /* cert.pem */ = {isa = PBXFileReference; lastKnownFileType = text; name = cert.pem; path = ../cert.pem; sourceTree = SOURCE_ROOT; };
@@ -363,6 +363,10 @@
 		DA5F7AAF2E85B16300733469 /* excel.test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = excel.test.js; sourceTree = "<group>"; };
 		DA5F7AB02E85B16300733469 /* powerPoint.test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = powerPoint.test.js; sourceTree = "<group>"; };
 		DA5F7AB12E85B16300733469 /* word.test.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = word.test.js; sourceTree = "<group>"; };
+		DAE8C7D82E896795002861D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DAE8C7DA2E896ADC002861D0 /* JSONmanager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = JSONmanager.hpp; sourceTree = "<group>"; };
+		DAE8C7DB2E896ADC002861D0 /* JSONmanager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = JSONmanager.cpp; sourceTree = "<group>"; };
+		DAE8C7DC2E896ADC002861D0 /* JSONstructs.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = JSONstructs.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -840,7 +844,8 @@
 		DA5F7A752E85A13800733469 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				DA5F7A732E85A13800733469 /* httpd.cpp */,
+				DAE8C7DD2E896ADC002861D0 /* JSON */,
+				DAE8C7D82E896795002861D0 /* main.cpp */,
 				DA5F7A742E85A13800733469 /* httplib.h */,
 			);
 			name = src;
@@ -933,6 +938,16 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
+		DAE8C7DD2E896ADC002861D0 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				DAE8C7DA2E896ADC002861D0 /* JSONmanager.hpp */,
+				DAE8C7DB2E896ADC002861D0 /* JSONmanager.cpp */,
+				DAE8C7DC2E896ADC002861D0 /* JSONstructs.hpp */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -995,7 +1010,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA5F7A762E85A14600733469 /* httpd.cpp in Sources */,
+				DAE8C7D92E896795002861D0 /* main.cpp in Sources */,
+				DAE8C7DE2E896ADC002861D0 /* JSONmanager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
